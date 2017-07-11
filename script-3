@@ -1,0 +1,17 @@
+#!/bin/csh
+set input = $1
+if ( $input < 0 || $input > 100 || $#argv == 0 ) then
+ echo Invalid input, must be between 0 and 100
+ exit
+endif
+if ( $input > 90 ) then
+ echo You got A
+else if ( $input > 80 ) then
+ echo You got B
+else if ( $input > 70 ) then
+ echo You got C
+else if ( $input > 60 ) then
+ echo You got D
+else
+ echo You failed
+endif

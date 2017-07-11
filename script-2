@@ -1,0 +1,17 @@
+#!/bin/csh
+while(1)
+echo 'Are you ok?'
+set input = $<
+switch ($input)
+ case "y":
+ case "Y":
+  echo glad to hear it
+  break
+ case 'n':
+ case 'N':
+  echo sorry that you are not feeling good
+  break
+ default:
+  echo incorrect choice
+endsw
+end

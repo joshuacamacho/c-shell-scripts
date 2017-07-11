@@ -1,0 +1,70 @@
+#!/bin/csh
+if ( $#argv != 2 ) then
+ echo this requires 2 command line arugments. two numbers
+ exit
+endif
+
+@ x = $1
+@ y = $2
+
+while(1)
+ echo 'Add the numbers (enter a or A)'
+ echo 'Subtract the numbers (enter s or S)'
+ echo 'Multiply the numbers (enter m or M)'
+ echo 'Divide the numbers (enter d or D)'
+ echo 'Exit (select e or E)'
+while(1)
+ set input = $<
+ 
+ switch ($input)
+  case "a":
+  case "A":
+   @ answer = $x + $y
+   echo Answer is $answer
+   break
+  case "s":
+  case "S":
+   @ answer = $x - $y
+   echo Answer is $answer
+   break
+  case "m":
+  case "M":
+   @ answer = $x * $y
+   echo Answer is $answer
+   break
+  case "d":
+  case "D":
+   @ answer = $x / $y
+   echo Answer is $answer
+   break
+  default:
+   echo That is not an option!!! Try again
+ endsw
+ end
+ echo Would you like to do an operation
+ echo '(A) on the same two integers'
+ echo '(B) on a new set of integers'
+ echo '(E) exit'
+
+ set input = $<
+ while(1)
+ switch ($input)
+  case "a":
+  case "A":
+   break
+  case "b":
+  case "B":
+   echo enter first number
+   @ x = $<
+   echo enter second number
+   @ y = $<
+   break
+  case "e":
+  case "E":
+   exit
+  default:
+   echo not a valid input
+ endsw
+end
+end
+   

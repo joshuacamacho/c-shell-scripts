@@ -1,0 +1,46 @@
+#!/bin/csh
+if ( $#argv != 2 ) then
+ echo this requires 2 numbers as arguments
+ exit
+endif
+
+if ( $1 < 0 || $2 < 0 ) then
+ echo this requires positive integer values
+ exit
+endif
+
+if ( $1 > $2 ) then
+ @ smallest = $2
+ @ largest = $1
+else
+ @ smallest = $1
+ @ largest = $2
+endif
+
+@ div = $smallest
+while ( $largest != 0 )
+ @ x = $1 % $div
+ @ y = $2 % $div
+ if ( $x == 0 && $y == 0 ) then
+  echo GDC is $div
+  break
+ endif
+ @ div = $div - 1
+end
+
+@ a = $1
+@ b = $2
+
+while (1)
+ if ( $a == $b ) then
+  echo LCM is $a
+  break
+ else if ( $a > $b ) then
+  @ b = $b + $2
+ else
+  @ a = $a + $1
+ endif
+end
+
+
+

@@ -1,0 +1,5 @@
+#!/bin/csh
+set thedate = `date`
+foreach field ($thedate)
+ echo $field
+end

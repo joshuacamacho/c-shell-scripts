@@ -37,6 +37,9 @@ while(1)
    @ answer = $x / $y
    echo Answer is $answer
    break
+  case "e":
+  case "E":
+   exit
   default:
    echo That is not an option!!! Try again
  endsw
@@ -66,5 +69,4 @@ while(1)
    echo not a valid input
  endsw
 end
-end
-   
+end 
